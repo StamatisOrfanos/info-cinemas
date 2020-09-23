@@ -1,0 +1,71 @@
+{% extends "adminBase.html" %}
+{% block title %}Update Movie{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      {%for msg in messages %}
+          <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+<div class="card-wrapper">
+    <div class="card">      
+
+      <h1 class="center">Update Movie</h1>
+
+      <form action="/admin/updateMovie" method ="POST" name="updateMovie_form">
+        <h2>All the movie titles in the database are the following:</h2>
+        {% for mv in mvList %}
+        <li class="list-group-item">
+            <p>
+                <strong>Title:</strong> {{ mv.title }} ({{ mv.year }})<br>
+                {% for dtc in  mv.screening: %}
+                <ul class="list-group" style="margin: 0.5rem 0">
+                <strong>Date of screening: {{ dtc.date }}</strong>
+                <strong>Screening Capacity: {{ dtc.capacity }}</strong>
+                </ul>
+                {% endfor %}
+            </p> 
+        </li><br><br>
+        {% endfor %}
+          
+          <h5>With this update form someone is able to update one screening per update and obviously all the other </h5>
+          <h6>Based on the information above please insert the title, year, date and capacity that you want to update</h6>
+          <label for="title">Old title</label>
+          <input type="text" name="title" class="field" required><br><br>
+
+          <label for="year">Old year</label>
+          <input type="number" name="year" class="field" required><br><br>
+
+          <label for="date">Old Date</label>
+          <input type="text" name="date" class="field" required><br><br>
+       
+          <h6>Insert the new data below (infomration can be skipped)</h6>
+          <label for="newTitle">New title</label>
+          <input type="text" name="newTitle" class="field"><br><br>
+
+          <label for="newYear">New year</label>
+          <input type="number" name="newYear" class="field"><br><br>
+
+          <label for="newDescription">New description</label>
+          <input type="text" name="newDescription" class="field"><br><br>
+
+          <h7>Please insert the screening data in the following form yy-mm-dd hh:mm :</h7><br>
+          <h7>Example : 2020-09-29 11:30 </h7><br>
+          <label for="newDate">New date and time</label>
+          <input type="text" name="newDate" class="field"><br><br>
+
+          <h7>Please insert a number between zero(0) and fifty(50):</h7><br>
+          <label for="newCapacity">New capacity</label>
+          <input type="number" name="newCapacity" class="field"><br><br>
+
+          <p class="error error--hidden"></p>
+          <input type="submit" value="Update Movie" class="button">
+
+      
+      </form>
+      
+    </div>
+</div>
+{% endblock %}

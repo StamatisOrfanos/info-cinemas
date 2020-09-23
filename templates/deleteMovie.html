@@ -1,0 +1,37 @@
+{% extends "adminBase.html" %}
+{% block title %}Search Movie{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      {%for msg in messages %}
+          <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+<div class="card-wrapper">
+    <div class="card">      
+    <!-- On one of the card we are going to print all the movie titles so the user 
+         does not have to use the search method and then go back to the delete page
+         since my html knowledge in close to none I can not do refreshing of pages 
+         and this seems the only way :). Sorry for the inconvenience.
+    -->
+      <h1 class="center">Delete Movie</h1>
+
+      <form action="/admin/deleteMovie" method ="POST" name="deleteMovie_form">
+        <h2>All the movie titles in the database are the following:</h2>
+        {% for mv in allMovies %}
+        <ul class="list-group" style="margin: 0.5rem 0">
+          <li class="list-group-item"><strong>{{ mv.title }}</strong></li>
+        </ul>
+        {% endfor %}
+        <label for="title">Title</label>
+        <input type="text" name="title" class="field" required><br>
+        <p class="error error--hidden"></p>
+        <input type="submit" value="Delete Movie" class="button">
+      
+      </form>
+      
+    </div>
+</div>
+{% endblock %}

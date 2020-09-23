@@ -1,0 +1,27 @@
+{% extends  "base.html" %}
+{% block title %}User Information{% endblock%}
+{% block content %}  
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      {%for msg in messages %}
+        <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+    <div class="card-wrapper">
+    
+        <div class="card">
+    
+          <h2 class="center">Your Information</h2>
+    
+          <p>
+            <strong>Name:</strong> {{ usrName }}<br>
+            <strong>Email:</strong> {{ usrEmail }}<br>
+            <strong>Category:</strong> {{ usrCategory }}<br>            
+          </p>
+        
+        </div>
+      
+      </div>
+
+{% endblock%}

@@ -1,0 +1,108 @@
+[
+	{
+		"title": "The Dark knight",
+		"year": 2008,
+        "description": "One year after the events of Batman Begins (2008), Batman, Lieutenant James Gordon, and District Attorney Harvey Dent plan to launch an attack on the mob by arresting the shady accountant of the mob, Lau. Lau is abducted from his building by Batman and is thrown into jail. Lau divulges the secrets which results in almost all the mob bosses thrown in jail. The desperate mob bosses turn to The Joker, a sadistic psychopath with green hair, completely yellow teeth, and a custom purple suit. The Joker kills a judge, the Police Commissioner, and tries to kill the Mayor and Harvey. The acts of The Joker produces anarchy and chaos in the people of Gotham, forcing Batman to come to terms to which may seem to be his greatest test to fight injustice and come closer to the fine line between hero and vigilante." ,
+        "screening" : [
+			{
+				"date": "2020-09-01 19:00",
+				"capacity" : 50
+
+			},
+			{
+				"date": "2020-09-02 18:00",
+				"capacity" : 50
+
+			},
+			{
+				"date": "2020-09-03 17:00",
+				"capacity" : 1
+
+			}
+		]
+	},
+	{
+		"title": "The devil's advocate",
+		"year": 1997,
+        "description": "The movie chronicles the descent of Kevin Lomax (Keanu Reeves), a small-time legal star from Florida, into the depths of the New York big time. Recruited by a powerful Manhattan law firm, he finds himself defending goat-killers and real estate tycoons for a boss named John Milton, who offers him a paradise found. Milton (Al Pacino) is the devil. That is a secret reserved for the second hour of the film, although the title hints it, the posters and TV commercials reveal it, and by the time it arrives Lomax is the only character who hasn't suspected. Charming, persuasive, with a wise little cackle, Milton sends a recruiter to Florida, where Lomax is an undefeated master of picking juries that do not convict. He wants the young man to join his team, and tempts him not on a mountain top but on a rooftop. The scene of the first meeting between Milton and Lomax, on a skyscraper roof, scores a stunning visual impact. The production designer, Bruno Rubeo, has created a spectacular effect: A water garden in the sky, with pool surfaces spilling over the edges of the building, so that water and sky seem to meet without any architectural separation. The two men walk perilously close to the edge, as the director, Taylor Hackford, plays with vertigo to suggest that Lomax is being offered all of Manhattan at his feet and also the possibility of a great and sudden fall. The young lawyer is impressed. So, at first, is his wife Mary Ann (Charlize Theron), who can't believe it when Milton offers them a three-bedroom apartment in a luxurious Fifth Avenue co-op. Only Lomax's Bible-quoting mother (Judith Ivey) has her doubts, quoting scripture about Sodom, Gomorra and other keywords that pop into the mind when Manhattan is mentioned. Her advice, indeed, seems increasingly sound as the film progresses. Lomax becomes obsessed with his job, ignoring his wife and drawing closer to a sexy woman at the office (Connie Nielsen). And the wife, obsessed with having a baby, begins to come apart. She has the film's first supernatural vision, when she sees a demon materialize in the face and body of a helpful neighbor (Tamara Tunie), and soon she's begging to go back to Gainesville. The satanic character is played by Pacino with relish bordering on glee. Reeves in contrast is sober and serious--the straight man. That's the correct choice for his role, but it leaves Pacino with many of the best lines (“I'm maybe the last humanist. The 20th century was entirely mine. I'm perking!”) “Devil's Advocate” is neither fish nor fowl: It is not a serious film about its subject, nor is it quite a dark comedy, despite some of Pacino's good lines. The epilogue, indeed, cheats in a way I thought had been left behind in grade school. And yet there are splendid moments.",
+        "screening" : [
+			{
+				"date": "2020-10-24 22:00",
+				"capacity" : 50
+
+			},
+			{
+				"date": "2020-10-28 20:00",
+				"capacity" : 20
+
+			},
+			{
+				"date": "2020-10-30 20:30",
+				"capacity" : 0
+
+			}
+		]
+	},
+	{
+		"title": "Fracture",
+		"year": 2007,
+        "description": "Fracture is a 2007 legal thriller film, starring Anthony Hopkins and Ryan Gosling, and directed by Gregory Hoblit.[1] It is the story of a man who shoots his unfaithful wife, and then engages in a battle of wits with a young assistant district attorney. ",
+        "screening" : [			
+		{
+			"date": "2020-11-01 14:00",
+			"capacity" : 50
+
+		},
+		{
+			"date": "2020-11-02 15:00",
+			"capacity" : 21
+
+		},
+		{
+			"date": "2020-11-03 10:00",
+			"capacity" : 9
+
+		}]
+	},
+	{
+		"title": "Blade Runner 2049",
+		"year": 2017,
+        "description": "In 2049, bioengineered humans known as replicants are slaves. K, a Nexus-9 replicant, works for the Los Angeles Police Department (LAPD) as a 'blade runner', an officer who hunts and 'retires' (kills) rogue replicants. At a protein farm, he retires Sapper Morton and finds a box buried under a tree. The box contains the remains of a female replicant who died during a caesarean section, demonstrating that replicants can reproduce biologically, previously thought impossible. K's superior, Lt. Joshi, fears that this could lead to a war between humans and replicants. She orders K to find and retire the replicant child to hide the truth.",
+        "screening" : [			
+		{
+			"date": "2020-11-10 18:00",
+			"capacity" : 10
+
+		},
+		{
+			"date": "2020-11-11 18:00",
+			"capacity" : 20
+
+		},
+		{
+			"date": "2020-11-12 18:00", 
+			"capacity" : 1
+
+		}]
+    },
+    {
+		"title": "Akira",
+		"year": "1988",
+        "description": "Kaneda is a bike gang leader whose close friend Tetsuo gets involved in a government secret project known as Akira. On his way to save Tetsuo, Kaneda runs into a group of anti-government activists, greedy politicians, irresponsible scientists and a powerful military leader. The confrontation sparks off Tetsuo's supernatural power leading to bloody death, a coup attempt and the final battle in Tokyo Olympiad where Akira's secrets were buried 30 years ago.",
+        "screening" : [			{
+			"date": "2021-01-01 21:00",
+			"capacity" : 1
+
+		},
+		{
+			"date": "2021-01-02 23:00",
+			"capacity" : 0
+
+		},
+		{
+			"date": "2021-01-03 19:30",
+			"capacity" : 0
+
+		}]
+	}
+]

@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+{% block title %}Sign-In page{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      {%for msg in messages %}
+          <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+    <div class="card-wrapper">
+        <div class="card">
+            <h1 class="center">Sign-In</h1>
+            <form action="/au/signIn" method="POST" name="signIn_form">
+      
+              <label for="email">Email</label>
+              <input type="email" name="email" class="field" required>
+      
+              <label for="password">Password</label>
+              <input type="password" name="password" class="field" required>
+              
+              <p class="error error--hidden"></p>
+              <input type="submit" value="Sign-In" class="btn">
+            </form>
+
+            <h5>If you are not already a user please sign-up through the link below</h5>
+            <a href="/au/signUp">Sign-Up Page</a>
+          </div>   
+    </div>
+{% endblock%}

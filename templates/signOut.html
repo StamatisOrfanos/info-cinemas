@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      {%for msg in messages %}
+          <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <div class="card-wrapper">
+
+    <div class="card-wrapper">
+      <div class="card">
+        <h1 class="center">Sign-Out</h1>
+        <form action="/au/signOut" method="POST" name="signOut_form">
+          <h2 class="center">Your Information</h2>
+          <p>
+            <strong>Name:</strong> {{ usrName }}<br>
+            <strong>Email:</strong> {{ usrEmail }}
+          </p>
+          <p class="error error--hidden"></p>
+          <input type="submit" value="Sign-Out" class="btn">
+        </form>
+      </div>   
+  </div> 
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "adminBase.html" %}
+{% block title %}Search Movie{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      {%for msg in messages %}
+          <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+<div class="card-wrapper">
+
+    <div class="card">
+
+      <h1 class="center">Search Movie</h1>
+
+      <form action="/admin/searchMovie" method="POST" name="searchMovie_form">
+
+    
+        <label for="title">Title</label>
+        <input type="text" name="title" class="field" required><br>
+
+        <label for="Year">Year</label>
+        <input type="number" name="year" class="field">
+            
+        <p class="error error--hidden"></p>
+
+        <input type="submit" value="Search Movie" class="button">
+      
+      </form>
+      
+    </div>
+</div>
+{% endblock %}

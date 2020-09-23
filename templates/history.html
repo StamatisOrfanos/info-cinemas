@@ -1,0 +1,29 @@
+{% extends "userBase.html" %}
+{% block title %}History{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      {%for msg in messages %}
+          <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+<div class="card-wrapper">
+    <div class="card">      
+      <h1 class="center">History</h1>
+
+      <form action="/user/movieHistory" method ="GET" name="movieHistory_form">
+        <h6>All the movies seen are the following</h6>
+        {% for usrdata in data %}
+        <ul class="list-group" style="margin: 0.5rem 0">
+          <li class="list-group-item"><strong>{{ usrdata.movies_seen}}</strong></li>
+        </ul>
+        {% endfor %}
+        <p class="error error--hidden"></p>
+      
+      </form>
+      
+    </div>
+</div>
+{% endblock %}

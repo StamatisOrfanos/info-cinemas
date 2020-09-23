@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      {%for msg in messages %}
+          <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <h2>Welcome to the InfoCinemas Website</h2>
+  <div class="card-wrapper">
+
+    <div class="card">
+
+      <h1 class="center">Create an Account</h1>
+
+      <form action="/au/signUp" method="POST" name="signUp_form">
+
+        <!-- In order to sign up to a website we need the name, e-mail and 
+          password of the user and we are going to automatically insert
+          the movies_seen and category in the authentication.py as
+          [] and "user"-->
+
+        <label for="name">Name</label>
+        <input type="text" name="name" class="field" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" class="field" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" class="field" required>
+            
+        <!-- We use the following piece of code to check for errors during the 
+             sign up process -->
+        <p class="error error--hidden"></p>
+
+        <input type="submit" value="Sign Up" class="btn">
+      
+      </form>
+      
+    </div>
+</div>
+{% endblock %}

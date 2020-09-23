@@ -1,0 +1,49 @@
+{% extends "adminBase.html" %}
+{% block title %}Insert New Movie{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      {%for msg in messages %}
+          <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+<div class="card-wrapper">
+
+    <div class="card">
+
+      <h1 class="center">Insert a new Movie</h1>
+
+      <form action="/admin/insertMovie" method="POST" name="insertMovie_form">
+
+    
+        <label for="title">Title</label>
+        <input type="text" name="title" class="field" required><br>
+
+        <label for="Year">Year</label>
+        <input type="number" name="year" class="field" required><br>
+
+        <label for="description">Description</label>
+        <input type="text" name="description" class="field" required><br><br>
+
+        <h6>Please insert the following data in the form yy-mm-dd hh:mm</h6>
+        <h6>Example: 2020-09-24 14:00</h6>
+        <label for="date">Date and Time</label>
+        <input type="datetime" name="date" class="field" required><br><br>
+
+        <h6>Please insert a number less or equal of fifty</h6>
+        <label for="capacity">Capacity</label>
+        <input type="number" name="capacity" class="field" required><br>
+            
+        <!-- We use the following piece of code to check for errors during the 
+             sign up process -->
+        <p class="error error--hidden"></p>
+
+        <input type="submit" value="Insert new Movie" class="button">
+      
+      </form>
+      
+    </div>
+</div>
+{% endblock %}

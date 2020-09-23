@@ -1,0 +1,30 @@
+[
+	{
+		"name": "Stamatis Orfanos",
+		"email": "admin@infocinemas.com",
+        "password": "admin",
+        "movies_seen" : [],
+		"category": "admin"
+	},
+	{
+		"name": "Christopher Nolan",
+		"email": "nolan@mail.com",
+        "password": "user1",
+        "movies_seen" : [],
+		"category": "user"
+	},
+	{
+		"name": "Quentin Tarantino",
+		"email": "tarantino@mail.com",
+        "password": "user2",
+        "movies_seen" : [], 
+		"category": "user"
+	},
+	{
+		"name": "Matt Reeves",
+		"email": "reeves@mail.com",
+        "password": "user3",
+        "movies_seen" : [], 
+		"category": "user"
+	}
+]

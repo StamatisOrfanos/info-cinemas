@@ -1,0 +1,56 @@
+{% extends "userBase.html" %}
+{% block title %}Buy Tickets{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      {%for msg in messages %}
+          <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+<div class="card-wrapper">
+    <div class="card">      
+
+      <h1 class="center">Buy Tickets</h1><br>
+      <h5>The following are all the movies with the screening date, time and capacity</h5><br>
+
+      <form action="/user/buyTickets" method="POST" name="buyTickets_form">
+        {% for mv in mvList %}
+        <li class="list-group-item">
+            <p>
+                <strong>Title:</strong> {{ mv.title }}<br>
+                <strong>Year:</strong> {{ mv.year }}<br>
+                {% for dtc in  mv.screening: %}
+                <ul class="list-group" style="margin: 0.5rem 0">
+                <strong>Date of screening: {{ dtc.date }}</strong>
+                <strong>Screening Capacity: {{ dtc.capacity }}</strong>
+                </ul>
+                {% endfor %}
+            </p> 
+        </li><br><br>
+        {% endfor %}
+        <label for="title">Title</label>
+        <input type="text" name="title" class="field" required><br><br>
+
+        <label for="year">Year</label>
+        <input type="number" name="year" class="field" required><br><br>
+
+        <h7>Please insert the screening data in the following form yy-mm-dd hh:mm :</h7><br>
+        <h7>Example : 2020-09-29 11:30 </h7><br>
+        <label for="date">Date and time</label>
+        <input type="text" name="date" class="field" required><br><br>
+
+        <h7>Please insert a number between zero(0) and fifty(50):</h7><br>
+        <label for="numTickets">Number of tickets</label>
+        <input type="text" name="numTickets" class="field" required><br><br>
+
+
+        <p class="error error--hidden"></p>
+        <input type="submit" value="Buy Tickets" class="button">
+      
+      </form>
+      
+    </div>
+</div>
+{% endblock %}

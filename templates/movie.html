@@ -1,0 +1,38 @@
+{% extends "adminBase.html" %}
+{% block title %}Search Movie{% endblock %}
+{% block content %}
+  {% with messages = get_flashed_messages()%}
+    {% if messages %}
+      {%for msg in messages %}
+          <p>{{msg}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+{% for movie in movies %}
+<div class="card-wrapper">
+
+    <div class="card-wrapper">
+      <div class="card">
+        <h1 class="center"></h1>
+        <form action="/admin/searchMovie" method="GET" name="movie_form">
+          <p>
+            <strong>Title:</strong> {{ movie.title }}<br>
+            <strong>Year:</strong> {{ movie.year }}<br>
+            <strong>Description:</strong> {{ movie.description }}<br>
+            <!-- dtc = date-time-capacity-->
+            {% for dtc in  movie.screening: %}
+            <ul class="list-group" style="margin: 0.5rem 0">
+              <li class="list-group-item"><strong>Date of screening: {{ dtc.date }}</strong></li>
+              <li class="list-group-item"><strong>Screening Capacity: {{ dtc.capacity }}</strong></li>
+            </ul>
+            {% endfor %}
+          </p>
+          <p class="error error--hidden"></p>
+        </form>
+      </div>   
+  </div> 
+  {% endfor %}
+{% endblock %}
+
+
