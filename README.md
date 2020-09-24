@@ -66,7 +66,6 @@ sudo docker-compose up --build
 
 
 <img src="./appImages/signin.png" width="512">
-<img src="./appImages/signinExample.png" width="512">
 
 
 
