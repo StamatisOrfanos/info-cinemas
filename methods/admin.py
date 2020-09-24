@@ -208,21 +208,14 @@ def updateMovie():
             finalCapacity = newCapacity
 
 
-        screening = []
-        DateDict = {"date": finalDate}
-        CapacityDict = {"capacity": finalCapacity}
-
-
-        DateDict.update(CapacityDict)
         
-        dictionary_copy = DateDict.copy()
-        screening.append(dictionary_copy)
-
         # Now we are going to update the movie with all the final variables 
         # whether the user has inserted new data or not we have checked all 
         # the above
 
-        movies.update({"title":title, "year":year, "screening.date":date}, {"$set": {"title": finalTitle, "year": finalYear, "description": finalDescription, "screening": screening}  })
+        movies.update_one({"title":title, "year":year, "screening.date":date}, {"$set": {"title": finalTitle, "year": finalYear, "description": finalDescription} })
+        movies.update_one({"title":title, "year":year, "screening.date":date}, {"$pull": {"screening": {"date": date}} })
+        movies.update_one({"title":title, "year":year, "screening.date":date}, {"$push": {"screening": {"date": finalDate, "capacity": finalCapacity}}})
         flash("The movie has been updated")
         return redirect(url_for("admin.adminHome"))
 
