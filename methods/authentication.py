@@ -29,7 +29,7 @@ def signUp():
 
         # Check if the user already exists in the database, since we are going to use the email as the 
         # key of the mogno documents
-        userExists = users.find({"email": userEmail}).count()
+        userExists = users.find_one({"email": userEmail}).count()
         if userExists == 0:
             user = {"name": userName, "email": userEmail, "password": userPassword, "movies_seen": [], "category": "user" }
             users.insert_one(user)
