@@ -187,7 +187,7 @@ def updateMovie():
             # form and in that way we are going to loop throuth them in order to find the 
             # matching date
             dateList = []
-            dateList.append(movies.find_one({"title":title, "year":year, "screening.date":date}, {"_id":0, "screening.date":1}) )   
+            dateList.append(movies.find_one({"title":title, "year":year, "screening.date":date}) )   
             for aDate in dateList:
                 if aDate.get("date") == date:
                     finalDate = aDate.get("date")
