@@ -199,7 +199,7 @@ def updateMovie():
 
         if not newCapacity:
             dateCapList = []
-            dateCapList. = movies.find_one({"title":title, "year":year, "screening.date":date})
+            dateCapList = movies.find_one({"title":title, "year":year, "screening.date":date})
             for aDateCap in dateCapList["screening"]:
                 if aDateCap.get("date") == date:
                     finalCapacity = safe_cast(aDateCap.get("screening.capacity"), int)
