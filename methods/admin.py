@@ -187,8 +187,8 @@ def updateMovie():
             # form and in that way we are going to loop throuth them in order to find the 
             # matching date
             dateList = []
-            dateList.append(movies.find_one({"title":title, "year":year, "screening.date":date}) )   
-            for aDate in dateList:
+            dateList = movies.find_one({"title":title, "year":year, "screening.date":date})   
+            for aDate in dateList["screening"]:
                 if aDate.get("date") == date:
                     finalDate = aDate.get("date")
                     break
@@ -199,8 +199,8 @@ def updateMovie():
 
         if not newCapacity:
             dateCapList = []
-            dateCapList.append(movies.find_one({"title":title, "year":year, "screening.date":date}, {"_id":0, "screening.date":1, "screening.capacity":1}) )
-            for aDateCap in dateCapList:
+            dateCapList. = movies.find_one({"title":title, "year":year, "screening.date":date})
+            for aDateCap in dateCapList["screening"]:
                 if aDateCap.get("date") == date:
                     finalCapacity = safe_cast(aDateCap.get("screening.capacity"), int)
                     break
