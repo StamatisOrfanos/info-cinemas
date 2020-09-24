@@ -140,8 +140,10 @@ def updateMovie():
         date = request.form["date"]
 
 
+        movie = movies.find_one({"title":title, "year":year, "screening.date":date}) 
+
         # Check if the movie exists in the database even tho I have printed them above  
-        if movies.find({"title":title, "year":year, "screening.date":date}) is None:
+        if movie is None:
             flash("There is no movie with the data inserted\nPlease try again")
             return redirect(url_for("admin.updateMovie"))
 
@@ -213,9 +215,9 @@ def updateMovie():
         # whether the user has inserted new data or not we have checked all 
         # the above
 
-        movies.update_one({"title":title, "year":year, "screening.date":date}, {"$set": {"title": finalTitle, "year": finalYear, "description": finalDescription} })
-        movies.update_one({"title":title, "year":year, "screening.date":date}, {"$pull": {"screening": {"date": date}} })
-        movies.update_one({"title":title, "year":year, "screening.date":date}, {"$push": {"screening": {"date": finalDate, "capacity": finalCapacity}}})
+        movies.update_one({ "_id": movie["_id"]}, {"$set": {"title": finalTitle, "year": finalYear, "description": finalDescription} })
+        movies.update_one({ "_id": movie["_id"]}, {"$pull": {"screening": {"date": date}} })
+        movies.update_one({ "_id": movie["_id"]}, {"$push": {"screening": {"date": finalDate, "capacity": finalCapacity}}})
         flash("The movie has been updated")
         return redirect(url_for("admin.adminHome"))
 
