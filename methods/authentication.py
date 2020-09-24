@@ -29,7 +29,7 @@ def signUp():
 
         # Check if the user already exists in the database, since we are going to use the email as the 
         # key of the mogno documents
-        userExists = users.find_one({"email": userEmail}).count()
+        userExists = users.find({"email": userEmail}).count()
         if userExists == 0:
             user = {"name": userName, "email": userEmail, "password": userPassword, "movies_seen": [], "category": "user" }
             users.insert_one(user)
@@ -106,7 +106,7 @@ def userInformation():
 def signOut():
     if request.method == "GET":
         # We need to show to the user the kind of account he/she is using
-        theUser = users.find({"email": session["email"]})
+        theUser = users.find_one({"email": session["email"]})
 
         return render_template("signOut.html", usrName=theUser["name"], usrEmail=theUser["email"])
     else:
