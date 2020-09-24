@@ -174,8 +174,8 @@ def updateMovie():
 
         # Check if the user inserts description to update
         if not newDescription:
-            descriptionDict = movies.find_one({"title":title, "year":year, "screening.date":date}, {"_id":0, "description":1})
-            finalDescription = descriptionDict.get("description")
+            descriptionDict = movies.find_one({"title":title, "year":year, "screening.date":date})
+            finalDescription = descriptionDict["description"]
         else:
             finalDescription = newDescription
 
