@@ -273,7 +273,7 @@ def deleteMovie():
 @admin.route("/userModification", methods=["GET", "POST"])
 def modifyUser():
     if request.method == "GET":
-        userEmails = users.find({}, {"_id": 0, "name":0, "email":1, "password":0, "movies_seen":0, "category": 1 })
+        userEmails = users.find({})
         return render_template("modifyUser.html", users=userEmails)
     else:
         email = request.form["email"]
